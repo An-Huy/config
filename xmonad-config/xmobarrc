@@ -1,0 +1,27 @@
+Config { font =  "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"       
+		, bgColor = "black"
+		, fgColor = "grey"
+		, position = Top
+		, lowerOnStart = True
+		, commands= [ Run Weather "VVNB" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+					, Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: B/s
+                             , "--High"     , "5000"       -- units: B/s
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10                    
+					, Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-s","-r"] "" 36000
+					, Run Date "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+					, Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+								, ("us"         , "<fc=#8B0000>US</fc>")
+                              ]
+					]
+		, sepChar = "%"
+		, alignSep = "}{"
+		, template = "%cpu% | %memory% | %dynnetwork% }{ %date% | %VVNB% | %uname% | %kbd%"
+		}
+
