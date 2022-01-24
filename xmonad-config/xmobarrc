@@ -1,28 +1,57 @@
-Config { font =  "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"       
-		, bgColor = "black"
-		, fgColor = "white"
+Config { font =  "xft: Font Awesome 5 Free Solid:style=Solid:size=10, Bitstream Vera Sans Mono:size=9:bold:antialias=true"       
+		, borderColor = "#262626"
+		, bgColor = "#262626"
+		, fgColor = "grey"
 		, position = Top
 		, lowerOnStart = True
-		, commands= [ Run Weather "VVNB" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+		, commands= [ Run Weather "VVNB" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000							
 					, Run StdinReader
-					, Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+					, Run DynNetwork     [ "--template" , ": <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "darkgreen"
                              , "--normal"   , "darkorange"
                              , "--high"     , "darkred"
                              ] 10                    
-					, Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Com "uname" ["-s","-r"] "" 36000
+					, Run MultiCpu       [ "--template" , ": <total0>%"
+                             , "--Low"      , "50"         -- units: %
+                             , "--High"     , "85"         -- units: %
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10
+					, Run CoreTemp       [ "--template" , ": <core0>°C"
+                             , "--Low"      , "70"        -- units: °C
+                             , "--High"     , "80"        -- units: °C
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 50
+
+                    , Run Memory ["-t",": <usedratio>%"] 10
+                    , Run Com "" ["-s", "-r"] "" 36000
 					, Run Date "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+					, Run Battery        [ "--template" , ": <acstatus>"
+                             , "--Low"      , "10"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "darkred"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkgreen"
+
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"	, "<left>% (<timeleft>)"
+                                       -- AC "on" status
+                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                       -- charged status
+                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                             ] 50
 					, Run Kbd [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
 								, ("us"         , "<fc=#8B0000>US</fc>")
                               ]
 					]
 		, sepChar = "%"
 		, alignSep = "}{"
-		, template = "%StdinReader% | %cpu% | %memory% | %dynnetwork% }{ %date% | %VVNB% | %uname% | %kbd% |"
-		}
-
+		, template = "%StdinReader% | %multicpu% | %coretemp%| %memory% | %dynnetwork% }{ %date% | %VVNB% | %uname% | %battery% | %kbd% "
+}
+ 
