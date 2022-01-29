@@ -1,6 +1,6 @@
 ___ ZSH installation and customization ___ 
-+sudo pacman -s zsh 
-+install oh-my-zsh from https://github.com/ohmyzsh/ohmyzsh 
++ sudo pacman -s zsh 
++ install oh-my-zsh from https://github.com/ohmyzsh/ohmyzsh 
 
 + After install oh-my-zsh, next is to install plugins to help enable syntax highlighting and auto suggestions
 - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
