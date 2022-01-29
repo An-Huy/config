@@ -42,7 +42,8 @@ ___ xmonad installation and customization ___
 
 ___ i3 installation and customization ___
 + installation:
-- sudo pacman -S xorg-server xorg-xinit i3-gaps i3status i3lock dmenu terminator firefox(if u dont have a broswer)
+- sudo pacman -S xorg-server xorg-xinit i3-gaps i3status i3lock dmenu terminator firefox picom nitrogen (if u dont have a broswer)
+- cp path-where-you-clone-the-repo/dotfiles/.xprofile ~/.xprofile 
 - sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 - cp path-where-you-clone-the-repo/dotfiles/.xinitrc ~/.xinitrc
 + gdm. sddm or others by your choice
@@ -62,8 +63,7 @@ ___ i3 installation and customization ___
 - yay -S siji-git ttf-unifont
 - mkdir .config/polybar
 - sudo cp /usr/share/doc/polybar/config ~/.config/polybar
-- sudo chown huy:huy .config/polybar/config
-or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
+- sudo chown huy:huy .config/polybar/config or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
 
 ___ betterlockscreen ___ 
 Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
