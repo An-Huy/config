@@ -17,7 +17,8 @@ call plug#begin()
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'preservim/nerdtree'
-	Plug 'EdenEast/nightfox.nvim'
+	"Plug 'EdenEast/nightfox.nvim'
+	Plug 'ellisonleao/gruvbox.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'williamboman/nvim-lsp-installer'
 	Plug 'glepnir/lspsaga.nvim'
@@ -32,7 +33,10 @@ call plug#begin()
 	
 call plug#end()
 
-colorscheme nordfox
+"colorscheme nordfox
+set termguicolors
+set background=dark " or light if you want light mode
+colorscheme gruvbox
 
 
 " ------------------------------- Nerdtree settings ------------------------------------ "
@@ -50,7 +54,7 @@ lua << EOF
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'gruvbox_dark',
     --component_separators = { left = '', right = ''},
     --section_separators = { left = '', right = ''},
     disabled_filetypes = {},
