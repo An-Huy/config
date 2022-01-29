@@ -65,7 +65,8 @@ ___ i3 installation and customization ___
 - sudo chown huy:huy .config/polybar/config
 or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
 
-
+___ betterlockscreen ___ 
+Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
 
 
 
