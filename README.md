@@ -69,7 +69,11 @@ ___ i3 installation and customization ___
 ___ betterlockscreen ___ 
 Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
 
-
+- vim-plug
++ for vim: 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
++ for neovim: 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
 
