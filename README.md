@@ -98,7 +98,11 @@ sudo cp /usr/share/doc/polybar/config ~/.config/polybar
 sudo chown user:user .config/polybar/config 
 ```
 
-- or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
+- Or cp from the repo with the launch script: 
+
+```
+sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
+```
 
 - you can use rofi instead of dmenu
 
