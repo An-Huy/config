@@ -66,11 +66,14 @@ run xmobar: xmobar &
 sudo pacman -S xorg-server xorg-xinit i3-gaps i3status i3lock dmenu terminator firefox picom nitrogen (if u dont have a broswer)
 ```
 
+```
 - cp path-where-you-clone-the-repo/dotfiles/.xprofile ~/.xprofile 
 - sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 - cp path-where-you-clone-the-repo/dotfiles/.xinitrc ~/.xinitrc
-+ Configuration file is generate in .config/i3: read the default config file to understand the key binding
-+ make i3status directory in .config file: mkdir .config/i3status
+```
+
+- Configuration file is generate in .config/i3: read the default config file to understand the key binding
+-  make i3status directory in .config file: mkdir .config/i3status
 
 ```
 sudo cp /etc/i3status.conf ~/.config/i3status/i3status.conf 
@@ -90,14 +93,14 @@ sudo cp /usr/share/doc/polybar/config ~/.config/polybar
 sudo chown user:user .config/polybar/config 
 ```
 
-or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
+- or cp from the repo with the launch script: sudo cp ~/path-where-you-clone-the-repo/polybar .config/polybar
 
 - you can use rofi instead of dmenu
 
 <h1> betterlockscreen </h1>
-Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
+- Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
 
-- vim-plug
+<h1> vim-plug </h1>
 - vim: 
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
