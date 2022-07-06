@@ -1,4 +1,5 @@
 <h1> ZSH installation and customization </h1>
+
 ```
 sudo pacman -s zsh 
 ```
@@ -73,9 +74,11 @@ sudo pacman -S xorg-server xorg-xinit i3-gaps i3status i3lock dmenu terminator f
 ```
 
 - Configuration file is generate in .config/i3: read the default config file to understand the key binding
--  make i3status directory in .config file: mkdir .config/i3status
-
+-  make i3status directory in .config file: 
 ```
+mkdir .config/i3status
+```
+
 sudo cp /etc/i3status.conf ~/.config/i3status/i3status.conf 
 ```    
 - change user and group: sudo chown user:user i3status.conf
