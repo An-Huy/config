@@ -106,11 +106,15 @@ sudo chown user:user .config/polybar/config
 - Follow the guide on the https://github.com/betterlockscreen/betterlockscreen.git 
 
 <h1> vim-plug </h1>
+
 - vim: 
+
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
 - neovim: 
+
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
